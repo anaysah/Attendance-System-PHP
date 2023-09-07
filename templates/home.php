@@ -19,10 +19,10 @@ require_once '../includes/action.function.inc.php';
                         <div class="add-class d-flex flex-column">
                             <h3>Add Class :</h3>
                             <span>
-                                <input type="text" class="addClass-input" name="class_name" placeholder="Class Name" />
+                                <input type="text" class="addClass-input form-control form-control-sm" name="class_name" placeholder="Class Name" />
                             </span>
                             <span>
-                                <input type="text" class="addClass-input" name="class_section" placeholder="Section" />
+                                <input type="text" class="addClass-input form-control form-control-sm" name="class_section" placeholder="Section" />
                             </span>
                             <input type="hidden" name="teacher_id" value="<?= $_SESSION["id"] ?>">
                             <input type="submit" name="submit" value="Add" class="btn btn-primary py-0 px-3">
@@ -43,7 +43,7 @@ require_once '../includes/action.function.inc.php';
                         }
                         ?>
                         <span>
-                            <input type="text" class="addClass-input" name="class_code" placeholder="Class Code" value="<?= $class_code ?>" />
+                            <input type="text" class="addClass-input form-control form-control-sm" name="class_code" placeholder="Class Code" value="<?= $class_code ?>" />
                         </span>
                         <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
                         <input type="submit" name="submit" value="Join" class="btn btn-primary py-0 px-3">

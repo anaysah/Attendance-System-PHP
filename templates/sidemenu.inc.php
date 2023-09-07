@@ -2,10 +2,13 @@
 <link rel="stylesheet" href="../styles/sidemenu.css">
 
 <div class="side-menu box" id="side-menu">
+    <?php
+    if ($_SESSION['userType']==="teacher"):?>
     <div class="side-menu-top" id="side-menu-top">
         <span class="border add-class flex-center"><i class="fa-sharp fa-solid fa-plus fa-lg"></i><span>Add
                 Class</span></span>
     </div>
+    <?php endif ?>
 
     <div class="side-menu-mid d-flex flex-column gap-1">
 
