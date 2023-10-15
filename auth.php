@@ -41,7 +41,17 @@
                         <div class="btn-layer"></div>
                         <input type="submit" name="submit" value="Login">
                     </div>
-                    <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+                    <div class="signup-link mb-2">Not a member? <a href="">Signup now</a></div>
+                    <div class="demo-box d-flex justify-content-around mb-2">
+                        <a href="includes/login.inc.php?usertype=teacher" class="d-flex flex-column align-items-center border border-2 border-primary px-4 py-1 rounded">
+                            <span class="lh-1"><small>Teacher</small></span>
+                            <span class="lh-1">Demo</span>
+                        </a>
+                        <a href="includes/login.inc.php?usertype=student" href="" class="d-flex flex-column align-items-center border border-2 border-primary px-4 py-1 rounded">
+                            <span class="lh-1"><small>Student</small></span>
+                            <span class="lh-1">Demo</span>
+                        </a>
+                    </div>
                 </form>
 
                 <!-- ##### Signup form ##### -->
