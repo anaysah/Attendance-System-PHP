@@ -76,7 +76,14 @@ require_once '../includes/action.function.inc.php';
 
                                     <p class="card-text"><?= $class['section'] ?></p>
                                 </div>
-                                <div class="card-footer bg-transparent border-success">Code: <?= $class['class_code'] ?></div>
+                                <div class="card-footer bg-transparent border-success d-flex justify-content-between">
+                                    <span>
+                                    Code: <?= $class['class_code'] ?>
+                                    </span>
+                                    <a href="../<?= $_SESSION['userType'] ?>/peoples.php" onclick="setClassIdCookie('<?= $class['class_id'] ?>','<?= $class['class_name'] ?>')">
+                                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                 <?php
