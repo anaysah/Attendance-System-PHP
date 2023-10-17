@@ -19,7 +19,7 @@ if (isset($_COOKIE['class_id'])) {
 <link rel="stylesheet" href="../styles/attendance.css">
 <div class="container-fluid main-body d-flex">
     <?php include_once("../templates/sidemenu.inc.php"); ?>
-    <div class="container-fluid">
+    <div class="container-fluid overflow-auto">
 
 
         <form action="attendance.inc.php" method="post" class="attendance-form">
