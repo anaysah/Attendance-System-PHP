@@ -20,9 +20,9 @@ session_start();
 <body class="bgImage">
     <main>
         <!-- <div id="header"> -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
+        <div class="container-fluid header-box">
+            <!-- <div class="row"> -->
+                <!-- <div class="col-12"> -->
                     <div id="header" class="bgImage">
                         
                         <div id="header-title-bar">
@@ -51,10 +51,10 @@ session_start();
                             <?php endif; ?>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
 
 
-            </div>
+            <!-- </div> -->
         </div>
         <!-- </div> -->
         <div id="messageBox">

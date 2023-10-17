@@ -1,4 +1,4 @@
 .table{
     color: var(--text-color);
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
 }

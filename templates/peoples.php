@@ -30,7 +30,7 @@ if (isset($_COOKIE['class_id'])) {
 <link rel="stylesheet" href="../styles/peoples.css">
 <div class="container-fluid main-body d-flex">
     <?php include_once("../templates/sidemenu.inc.php"); ?>
-    <div class="container-fluid">
+    <div class="container-fluid overflow-auto">
         <div class="container-fluid p-0">
             <h3>Teachers</h3><hr>
             <table class="table">

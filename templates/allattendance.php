@@ -141,7 +141,7 @@ if (isset($_COOKIE['class_id'])) {
 <link rel="stylesheet" href="../styles/attendance.css">
 <div class="container-fluid main-body d-flex ">
     <?php include_once("../templates/sidemenu.inc.php"); ?>
-    <div class="container-fluid">
+    <div class="container-fluid overflow-auto">
         <table class="table">
 
             <thead class="thead-dark">
