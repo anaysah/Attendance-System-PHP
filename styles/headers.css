@@ -69,7 +69,7 @@
 }
 
 
-.flex-center {
+.flex-left {
 	display: flex;
 	justify-content: start;
 	align-items: center;
@@ -91,13 +91,13 @@ a {
 
 
 
-.link {
+/* .link {
 	color: #c4c3ca;
 }
 
 .link:hover {
 	color: #ffeba7;
-}
+} */
 
 p {
 	font-weight: 500;
@@ -110,6 +110,9 @@ h4 {
 	/* display: inline-block; */
 }
 
+.table{
+    color: var(--text-color);
+}
 
 
 body {

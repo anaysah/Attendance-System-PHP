@@ -5,7 +5,7 @@
     <?php
     if ($_SESSION['userType']==="teacher"):?>
     <div class="side-menu-top" id="side-menu-top">
-        <span class="border add-class flex-center"><i class="fa-sharp fa-solid fa-plus fa-lg"></i><span>Add
+        <span class="border add-class flex-left"><i class="fa-sharp fa-solid fa-plus fa-lg"></i><span>Add
                 Class</span></span>
     </div>
     <?php endif ?>
@@ -14,7 +14,7 @@
 
         <span class="side-menu-btn" id="attendance"><i class="fa-solid fa-notes-medical fa-lg"></i><span>Attendance</span></span>
         <span class="side-menu-btn" id="peoples"><i class="fa-solid fa-users fa-lg"></i><span>Peoples</span></span>
-    </div>
+            </div>
     <div class="side-menu-down d-flex flex-column gap-1">
         <span class="side-menu-btn" id="classes_label"><i class="fa-solid fa-users-rectangle fa-lg"></i><span>Classses</span></span>
         <!-- <hr class="m-0"> -->

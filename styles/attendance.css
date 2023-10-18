@@ -38,10 +38,3 @@
     border: none;
     padding: .2rem .5rem;
 }
-
-.attendacne-sheet {
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    /* overflow: auto; */
-    /* white-space: nowrap; */
-}

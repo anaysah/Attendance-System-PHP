@@ -60,7 +60,7 @@ if (isset($_COOKIE['class_id'])) {
             </div>
 
             <hr class="m-0">
-            <div class="attendacne-sheet">
+            <div class="">
                 <table class="table">
                     <thead>
                         <tr>
@@ -79,7 +79,7 @@ if (isset($_COOKIE['class_id'])) {
                                     $student_count++; ?>
                                 </th>
                                 <td>
-                                    <label class="form-check flex-center">
+                                    <label class="form-check flex-left">
                                         <input class="form-check-input present-checkbox" type="checkbox" value="<?= $student['student_id']; ?>" name="present[]" id="student_<?= $student['student_id']; ?>" checked>
                                     </label>
                                 </td>
