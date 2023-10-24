@@ -22,7 +22,7 @@ if (isset($_COOKIE['class_id'])) {
     <div class="container-fluid overflow-auto">
 
 
-        <form action="attendance.inc.php" method="post" class="attendance-form">
+        <form action="attendance.inc.php" method="POST" class="attendance-form">
             <div class="input-box mb-2">
                 <div>
                     <label for="">Class</label>
@@ -31,12 +31,12 @@ if (isset($_COOKIE['class_id'])) {
 
                 <div>
                     <label for="date">Date</label>
-                    <input type="date" class="form-control" name="class_date">
+                    <input type="date" class="form-control" name="class_date" required>
                 </div>
 
                 <div>
                     <label for="time">Time</label>
-                    <input type="time" class="form-control" name="class_time">
+                    <input type="time" class="form-control" name="class_time" required>
                 </div>
 
 
@@ -54,7 +54,7 @@ if (isset($_COOKIE['class_id'])) {
                 <h5 class="">Check the students who are present!</h5>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary btn-sm">Save the attendance!</button>
+                    <button type="submit" class="btn btn-primary btn-sm" name="submit">Save the attendance!</button>
                     <!-- <input type="submit" name="submit" value=""> -->
                 </div>
             </div>

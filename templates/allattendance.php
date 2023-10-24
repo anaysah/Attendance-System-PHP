@@ -168,17 +168,23 @@ if (isset($_COOKIE['class_id'])) {
                 <tr>
                     <th scope="row"><?= $attendance_count;$attendance_count++; ?></th>
                     
-                    <td><?=$att['date']?></td>
-                    <td><?=$att['time']?></td>
+                    <!-- <td><?=$att['date']?></td> -->
+                    <td><?= date('d-m-Y', strtotime($att['date'])) ?></td>
+                    <!-- <td><?=$att['time']?></td> -->
+                    <td><?= date('h:i A', strtotime($att['time'])) ?></td>
                     <?php if($_SESSION['userType']=="teacher"):?>
                         <td><?=$att['teacher_name']?></td>
                         <td><?=$att['present_count']?></td>
                         <td><?=$att['absent_count']?></td>
                         <td><?=$att['onleave_count']?></td>
                         <td>
-                            <form action="../includes/action.inc.php" method="post" id="action-form">
-                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                            <button name='deleteAttendance' class="btn btn-primary btn-sm" onclick="confirmDelete()">Delete</button>
+                            <form action="../includes/action.inc.php" method="post">
+                            <button type="button" class="btn btn-primary btn-sm tooltip-box" tooltip-data="Edit">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" name='deleteAttendance' class="btn btn-primary btn-sm tooltip-box" tooltip-data="Delete" onclick="confirmDelete(this)">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
                             <input type='hidden' name='attendance_id' value="<?= $att['attendance_id']?>">
                             </form>
                         </td>
@@ -195,10 +201,18 @@ if (isset($_COOKIE['class_id'])) {
 </div>
 
 <script>
-    function confirmDelete() {
+    function confirmDelete(e) {
         if (confirm("Are you sure you want to delete this attendance record?")) {
-            var form = document.getElementById('action-form');
+            let form = e.parentNode;
+            
+            let input = document.createElement("input");
+            input.type = "hidden"; // Hidden input field
+            input.name = "deleteAttendance";
+            input.value = "true";
+            form.appendChild(input);
+
             form.submit();
+            console.log("done")
         }
     }
 </script>

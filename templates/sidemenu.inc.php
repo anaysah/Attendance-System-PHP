@@ -5,8 +5,9 @@
     <?php
     if ($_SESSION['userType']==="teacher"):?>
     <div class="side-menu-top" id="side-menu-top">
-        <span class="border add-class flex-left"><i class="fa-sharp fa-solid fa-plus fa-lg"></i><span>Add
-                Class</span></span>
+        <span class="border add-class flex-left">
+            <i class="fa-sharp fa-solid fa-plus fa-lg"></i><span>Roll Call</span>
+        </span>
     </div>
     <?php endif ?>
 

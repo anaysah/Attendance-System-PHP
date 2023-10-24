@@ -2,8 +2,8 @@
 session_start();
 require_once '../includes/main.function.inc.php';
 
-if (!isset($_POST["submit"])) {
-    redirect("../{$_SESSION['userType']}/", "wrong link");
+if (!isset($_POST["submit"]) || !isset($_POST["class_date"]) || !isset($_POST["class_time"])) {
+    redirect("../{$_SESSION['userType']}/attendance.php", "bad request");
 }
 
 require_once '../includes/dbh.inc.php';
@@ -61,7 +61,9 @@ $class_id = $_COOKIE['class_id'];
 $date = $_POST['class_date'];
 $time = $_POST['class_time'];
 $teacher_id = $_SESSION['id'];
-$present = $_POST['present'];
+if (isset($_POST['present'])) $present = $_POST['present'];
+else $present = [];
+
 if(isset($_POST['onleave'])){
     $onleave = $_POST['onleave'];
     $present = array_diff($present, $onleave);
@@ -84,4 +86,4 @@ if(isset($onleave)){
     addOnLeave($conn, $onleave, $students, $attendance_id, $reason);
 }
 
-redirect("../{$_SESSION['userType']}/", "attendance added");
+redirect("../{$_SESSION['userType']}/allattendance.php", "attendance added");
