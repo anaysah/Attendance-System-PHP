@@ -1,0 +1,62 @@
+.fg-bg{
+    background-color: var(--fgColor);
+}
+
+.custom-table th,
+.custom-table td {
+    /* border: 1px solid #ccc; */
+
+    
+}
+
+.custom-table div{
+    padding: 8px;
+}
+
+.custom-table th{
+    background-color: var(--fgColor);
+    position: sticky;
+    top: 0;
+    /* border: 1px solid #ccc; */
+}
+
+td:first-child{
+    position: sticky;
+    left: 0;
+    /* background-color: #fff; */
+    background-color: var(--fgColor);
+    z-index: 1;
+}
+
+th:first-child{
+    position: sticky;
+    left: 0;
+    z-index: 2;
+}
+
+th:last-child, td:last-child{
+    position: sticky;
+    right: 0;
+    z-index: 1;
+    background-color: var(--fgColor);
+}
+
+th:last-child{
+    z-index: 2;
+}
+
+.absent {
+    background-color: #ff7f7f; /* Red color for absent status */
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline;
+}
+
+.present {
+    background-color: #7fff7f; /* Green color for present status */
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline;
+}

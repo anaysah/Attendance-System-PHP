@@ -1,7 +1,7 @@
 <?php
 function allStudents($conn, $class_id)
 {
-    $query = "SELECT student.student_id, student.name, student.email FROM student 
+    $query = "SELECT student.student_id, student.name, student.email, class_student_member.roll_no FROM student 
               INNER JOIN class_student_member ON student.student_id = class_student_member.student_id 
               WHERE class_student_member.class_id = ?";
 

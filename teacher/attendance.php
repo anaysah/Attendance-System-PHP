@@ -31,12 +31,12 @@ if (isset($_COOKIE['class_id'])) {
 
                 <div>
                     <label for="date">Date</label>
-                    <input type="date" class="form-control" name="class_date" required>
+                    <input type="date" class="form-control" name="class_date" id="class_date" required>
                 </div>
 
                 <div>
                     <label for="time">Time</label>
-                    <input type="time" class="form-control" name="class_time" required>
+                    <input type="time" class="form-control" name="class_time" id="class_time" required>
                 </div>
 
 
@@ -140,5 +140,20 @@ if (isset($_COOKIE['class_id'])) {
             });
         }
     }
+
+    // Set the default value of date and time input feild to current time and date
+    const currentDate = new Date();
+
+    const formattedDate = currentDate.toISOString().split('T')[0];
+
+    const hours = currentDate.getHours().toString().padStart(2, '0'); // Get hours (00-23)
+    const minutes = currentDate.getMinutes().toString().padStart(2, '0'); // Get minutes (00-59)
+    const formattedTime = `${hours}:${minutes}`;
+
+    document.getElementById("class_date").value = formattedDate;
+    document.getElementById("class_time").value = formattedTime;
+    // end here
+
+
 </script>
 <?php include_once("../templates/footer.php"); ?>
