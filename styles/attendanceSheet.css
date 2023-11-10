@@ -2,13 +2,6 @@
     background-color: var(--fgColor);
 }
 
-.custom-table th,
-.custom-table td {
-    /* border: 1px solid #ccc; */
-
-    
-}
-
 .custom-table div{
     padding: 8px;
 }
@@ -17,6 +10,7 @@
     background-color: var(--fgColor);
     position: sticky;
     top: 0;
+    z-index: 2;
     /* border: 1px solid #ccc; */
 }
 
@@ -25,25 +19,29 @@ td:first-child{
     left: 0;
     /* background-color: #fff; */
     background-color: var(--fgColor);
-    z-index: 1;
 }
 
 th:first-child{
     position: sticky;
     left: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 th:last-child, td:last-child{
     position: sticky;
     right: 0;
-    z-index: 1;
     background-color: var(--fgColor);
 }
 
 th:last-child{
-    z-index: 2;
+    z-index: 3;
 }
+
+tr:nth-child(even) {
+    background-color: var(--fgColor);    
+    opacity: 75%;
+}
+
 
 .absent {
     background-color: #ff7f7f; /* Red color for absent status */
