@@ -32,7 +32,10 @@ if (isset($_COOKIE['class_id'])) {
     <?php include_once("../templates/sidemenu.inc.php"); ?>
     <div class="container-fluid overflow-auto">
         <div class="container-fluid p-0">
-            <h3>Teachers</h3><hr>
+            <div class="d-flex justify-content-between align-items-end border-bottom border-primary mb-3 py-1">
+                <h3 class="m-0">Teachers</h3>
+                <h5 class="m-0"><?=count($teachers)?> teachers</h5>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -60,7 +63,10 @@ if (isset($_COOKIE['class_id'])) {
             </table>
         </div><br>
         <div class="container-fluid p-0">
-            <h3>Students</h3><hr>
+            <div class="d-flex justify-content-between align-items-end border-bottom border-primary mb-3 py-1">
+            <h3 class="m-0">Students</h3>
+            <h5 class="m-0"><?=count($students)?> students</h5>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
