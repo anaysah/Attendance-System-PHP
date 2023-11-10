@@ -94,6 +94,7 @@ $attendance = getAttendanceForCurrentMonth($conn, $_COOKIE["class_id"], $month);
             </a>
         </div>
         <div class="overflow-x-auto rounded border border-primary-subtle border-opacity-75">
+            <?php if(count($attendance)!=0):?> <!-- only show the table if data is available -->
             <table class="custom-table rounded w-100">
                 <thead>
                     <tr>
@@ -139,6 +140,11 @@ $attendance = getAttendanceForCurrentMonth($conn, $_COOKIE["class_id"], $month);
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <?php else:?>
+                <div>
+                    No data available
+                </div>
+            <?php endif;?>
         </div>
     </div>
 </div>
