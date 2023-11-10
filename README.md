@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-You can check out the live demo of Roll Call at the following link: [Roll Call Demo](rollcall.epizy.com)
+You can check out the live demo of Roll Call at the following link: <a href="https://rollcall.epizy.com/">Roll Call Demo</a>
 
 ## Description
 
@@ -20,11 +20,12 @@ Roll Call is an open-source Attendance Management System built with PHP and Boot
 
 ## Screenshots
 
-![Landing Page](https://i.ibb.co/frqhZD7/localhost-8000.png)
-![Login and Singup](https://i.ibb.co/qpY5LQp/localhost-8000-auth-php.png)
-![Dashboard](https://i.ibb.co/kS8fcyr/localhost-8000-teacher.png)
-![Take Attendance ](https://i.ibb.co/VM9GXTc/localhost-8000-teacher-attendance-php.png)
-![Peoples](https://i.ibb.co/QCVw9tD/localhost-8000-teacher-peoples-php.png)
+![Landing Page](images/ss_dashboard.png)
+![Login and Singup](images/ss_auth.php.png)
+![Dashboard](images/ss_teacher.png)
+![Attendance Sheet](images/ss_teacher_attendanceSheet.php.png)
+![Take Attendance ](images/ss_teacher_attendance.php.png)
+![Peoples](images/ss_teacher_peoples.php.png)
 
 ## Installation
 
@@ -81,6 +82,7 @@ To set up Roll Call on Computer, follow these steps:
    - Take attendance.
    - View attendance statistics.
    - Have students data.
+   - Attendance sheet month vise
 
 3. **Student Dashboard:**
 
