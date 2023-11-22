@@ -34,24 +34,25 @@ function joinClass($conn, $class_code, $id, $user_type)
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows > 0) {
-        return "Error: Student is already a member of the class.";
+        return "Error: User is already a member of the class.";
     }
 
     // Add student to class
     $stmt = $conn->prepare("INSERT INTO class_".$user_type."_member (class_id, ".$user_type."_id) VALUES (?, ?)");
     $stmt->bind_param("ii", $class_id, $id);
     if ($stmt->execute()) {
-        return "Success: Student added to class.";
+        return "Success: User added to class.";
     } else {
         return "Error: Failed to add student to class.";
     }
 }
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["submit"]) || isset($_GET["class_code"]) ) {
     require_once '../includes/dbh.inc.php';
 
-    $class_code = $_POST['class_code'];
-    $id = $_POST['id'];
+    $class_code = $_REQUEST['class_code'];
+    // $id = $_POST['id'];
+    $id = $_SESSION['id'];
     $user_type = $_SESSION['userType'];
     $HOME = ($user_type=="teacher")?"../teacher":"../student";
 

@@ -32,7 +32,7 @@ require_once '../includes/action.function.inc.php';
             <?php endif ?>
 
             <div class="box p-3 mb-2 bgImage">
-                <form action="../student/joinClass.inc.php" method="post">
+                <form action="../includes/joinClass.inc.php" method="post">
                     <div class="join-class d-flex flex-column">
                         <h3>Join Class :</h3>
                         <?php
@@ -45,7 +45,7 @@ require_once '../includes/action.function.inc.php';
                         <span>
                             <input type="text" class="addClass-input form-control form-control-sm" name="class_code" placeholder="Class Code" value="<?= $class_code ?>" />
                         </span>
-                        <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
+                        <!-- <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>"> -->
                         <input type="submit" name="submit" value="Join" class="btn btn-primary py-0 px-3">
                     </div>
                 </form>
@@ -71,7 +71,7 @@ require_once '../includes/action.function.inc.php';
                                             <span class="flex-cen">
                                                 <h4 class="m-0"><?= $class['class_name'] ?></h4>
                                             </span></a>
-                                        <span class="ml-auto copyCode-btn flex-cen tooltip-box" tooltip-data="Copy Class Link" data-link="<?= $DOMAIN ?>/home.php?join=<?= $class['class_code'] ?>"><i class="fa-regular fa-clipboard fa-lg"></i></span>
+                                        <span class="ml-auto copyCode-btn flex-cen tooltip-box" tooltip-data="Copy Class Link" data-link="<?= $DOMAIN ?>/includes/joinClass.inc.php?class_code=<?= $class['class_code'] ?>"><i class="fa-regular fa-clipboard fa-lg"></i></span>
                                     </div>
 
                                     <p class="card-text"><?= $class['section'] ?></p>
@@ -80,7 +80,7 @@ require_once '../includes/action.function.inc.php';
                                     <span>
                                     Code: <?= $class['class_code'] ?>
                                     </span>
-                                    <a href="../<?= $_SESSION['userType'] ?>/peoples.php" onclick="setClassIdCookie('<?= $class['class_id'] ?>','<?= $class['class_name'] ?>')">
+                                    <a href="../<?= $_SESSION['userType'] ?>/peoples.php" onclick="setClassIdCookie('<?= $class['class_id'] ?>','<?= $class['class_name'] ?>', '<?= $class['class_code'] ?>')">
                                         <i class="fa-solid fa-arrow-right fa-xl"></i>
                                     </a>
                                 </div>
@@ -124,9 +124,10 @@ require_once '../includes/action.function.inc.php';
     //---copyCode-btn funtion endhere
 
 
-    function setClassIdCookie(class_id, class_name) {
+    function setClassIdCookie(class_id, class_name, class_code) {
         document.cookie = "class_id=" + class_id + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
         document.cookie = "class_name=" + class_name + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie = "class_code=" + class_code + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";        
     }
 </script>
 
