@@ -77,7 +77,7 @@ $attendance = getAttendanceForCurrentMonth($conn, $_COOKIE["class_id"], $month);
 <div class="container-fluid main-body d-flex">
     <?php include_once("../templates/sidemenu.inc.php"); ?>
     <div class="d-flex flex-column flex-grow-1 gap-2 overflow-x-auto">
-        <div class="d-flex justify-content-between fg-bg rounded py-2 px-3">
+        <div class="d-flex justify-content-between foreground rounded py-2 px-3">
             <a href="<?= $_SERVER['PHP_SELF'] . "?month=" . date("Y-m", strtotime($month . " -1 month")) ?>"
                 class="w-25 text-start">
                 <i class="fa-solid fa-arrow-left "></i>

@@ -92,7 +92,9 @@ a {
 	text-decoration: none;
 }
 
-
+.foreground{
+    background-color: var(--fgColor);
+}
 
 /* .link {
 	color: #c4c3ca;

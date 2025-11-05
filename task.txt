@@ -1,0 +1,2 @@
+1. put demo button on second box
+2. attandense sheet mid columns are getting stretched (means not looking good in less data)

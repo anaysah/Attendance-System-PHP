@@ -13,10 +13,11 @@
 
     <div class="side-menu-mid d-flex flex-column gap-1">
 
-        <span class="side-menu-btn" id="attendance"><i class="fa-solid fa-notes-medical fa-lg"></i><span>Attendance</span></span>
+        <span class="side-menu-btn" id="attendance"><i class="fa-regular fa-folder-open"></i><span>Attendance</span></span>
         <span class="side-menu-btn" id="peoples"><i class="fa-solid fa-users fa-lg"></i><span>Peoples</span></span>
         <?php if ($_SESSION['userType'] === "teacher"): ?>
         <span class="side-menu-btn" id="sheet"><i class="fa-solid fa-table fa-lg"></i><span>Sheet</span></span>
+        <span class="side-menu-btn" id="add-students"><i class="fa-solid fa-user-plus"></i><span>Add student</span></span>
         <?php endif; ?>
     </div>
     <div class="side-menu-down d-flex flex-column gap-1">
@@ -31,7 +32,7 @@
             foreach ($classes as $class):
                 ?>
                 <a href="" class="class-name-btn" id="class_<?= $class['class_id'] ?>"
-                    onclick="setClassIdCookie('<?= $class['class_id'] ?>','<?= $class['class_name'] ?>')">
+                    onclick="setClassIdCookie('<?= $class['class_id'] ?>','<?= $class['class_name'] ?>', '<?= $class['class_code'] ?>')">
                     <span>
                         <?= $class['class_name'] ?>
                         <?= $class['section'] ?>
@@ -55,6 +56,7 @@
         "peoples": "../<?= $_SESSION["userType"] ?>/peoples.php",
         "attendance": "../<?= $_SESSION["userType"] ?>/allattendance.php",
         "sheet": "../<?= $_SESSION["userType"] ?>/attendanceSheet.php",
+        "add-students":"../<?= $_SESSION["userType"] ?>/addstudents.php",
     }
     for (let id in links) {
         const myDiv = document.getElementById(id);
@@ -65,9 +67,10 @@
     }
 
     //---change the cokkie
-    function setClassIdCookie(class_id, class_name) {
+    function setClassIdCookie(class_id, class_name, class_code) {
         document.cookie = "class_id=" + class_id + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
         document.cookie = "class_name=" + class_name + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie = "class_code=" + class_code + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     }
     //---change the cokkie end here
 
