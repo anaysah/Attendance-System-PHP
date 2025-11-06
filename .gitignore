@@ -2,3 +2,5 @@ test/
 PHPMailer/
 test/
 extra/
+logs/
+.env
