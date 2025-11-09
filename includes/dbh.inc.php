@@ -10,7 +10,9 @@ $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' 
 $domain = $_SERVER['HTTP_HOST'];
 $websiteUrl = $protocol . $domain;
 
-$myMail = env('ADMIN_EMAIL');
+$myMail = env('MAIL_FROM_ADDRESS');
+
+$password = env('MAIL_FROM_PASSWORD');
 
 $conn = mysqli_connect($serverName,$DBusername,$DBpass,$DBname);
 

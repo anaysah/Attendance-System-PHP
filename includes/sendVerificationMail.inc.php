@@ -2,10 +2,9 @@
 // session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 function getUser($conn, $id, $userType) {
     $sql = "SELECT * FROM " . $userType . " WHERE ".$userType."_id = ? LIMIT 1";
@@ -21,7 +20,7 @@ function getUser($conn, $id, $userType) {
 }
 
 
-function sendVerificationMail($serverName, $id, $token, $r_email, $s_email, $name, $userType)
+function sendVerificationMail($serverName, $id, $token, $r_email, $s_email, $password, $name, $userType)
 {
     $result = false;
     $mail = new PHPMailer(true);
@@ -33,7 +32,7 @@ function sendVerificationMail($serverName, $id, $token, $r_email, $s_email, $nam
         $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
         $mail->SMTPAuth = true; // Enable SMTP authentication
         $mail->Username = $s_email; // SMTP username
-        $mail->Password = 'bochevsqffkqwstz'; // SMTP password
+        $mail->Password = $password; // SMTP password
         $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587; // TCP port to connect to
 
@@ -54,7 +53,7 @@ function sendVerificationMail($serverName, $id, $token, $r_email, $s_email, $nam
             $result = false;
         }
     } catch (Exception $e) {
-        // return "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        return "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         $result = false;
     }
     return $result;
@@ -75,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // print_r($data);
     if($data['status']==='inactive'){
-        $mail = sendVerificationMail($websiteUrl, $id, $token, $email, $myMail, $name, $userType);
+        $mail = sendVerificationMail($websiteUrl, $id, $token, $email, $myMail, $password, $name, $userType);
         if ($mail) echo "Please check your E-mail"; 
         else echo "Verification may be not sent please try registering later again";
     }else{

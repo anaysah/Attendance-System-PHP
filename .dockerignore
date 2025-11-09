@@ -46,7 +46,6 @@ npm-debug.log*
 
 # PHP specific
 vendor/
-composer.lock
 
 # Database dumps
 *.sql.backup

@@ -25,10 +25,19 @@ RUN docker-php-ext-install \
     bcmath \
     gd
 
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # Enable Apache modules
 RUN a2enmod rewrite ssl headers
 
-# Copy application files
+# Copy composer files first for better caching
+COPY composer.json composer.lock* /var/www/html/
+
+# Install Composer dependencies
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+
+# Copy rest of application files
 COPY . /var/www/html/
 
 # Create .env file from example if it doesn't exist

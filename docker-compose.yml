@@ -19,6 +19,7 @@ services:
       - APP_NAME=${APP_NAME}
       - APP_ENV=${APP_ENV}
       - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
+      - MAIL_FROM_PASSWORD=${MAIL_FROM_PASSWORD}
     depends_on:
       mysql:
         condition: service_healthy
